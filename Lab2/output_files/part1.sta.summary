@@ -1,0 +1,53 @@
+------------------------------------------------------------
+TimeQuest Timing Analyzer Summary
+------------------------------------------------------------
+
+Type  : Slow 1100mV 85C Model Setup 'display_converter:comb_19|bcd_digit[3][1]_687'
+Slack : -14.682
+TNS   : -90.409
+
+Type  : Slow 1100mV 85C Model Hold 'display_converter:comb_19|bcd_digit[3][1]_687'
+Slack : -3.594
+TNS   : -8.159
+
+Type  : Slow 1100mV 85C Model Minimum Pulse Width 'display_converter:comb_19|bcd_digit[3][1]_687'
+Slack : -3.370
+TNS   : -495.266
+
+Type  : Slow 1100mV 0C Model Setup 'display_converter:comb_19|bcd_digit[3][1]_687'
+Slack : -14.329
+TNS   : -88.364
+
+Type  : Slow 1100mV 0C Model Hold 'display_converter:comb_19|bcd_digit[3][1]_687'
+Slack : -3.731
+TNS   : -8.453
+
+Type  : Slow 1100mV 0C Model Minimum Pulse Width 'display_converter:comb_19|bcd_digit[3][1]_687'
+Slack : -3.412
+TNS   : -508.666
+
+Type  : Fast 1100mV 85C Model Setup 'display_converter:comb_19|bcd_digit[3][1]_687'
+Slack : -9.052
+TNS   : -52.938
+
+Type  : Fast 1100mV 85C Model Hold 'display_converter:comb_19|bcd_digit[3][1]_687'
+Slack : -1.744
+TNS   : -3.975
+
+Type  : Fast 1100mV 85C Model Minimum Pulse Width 'display_converter:comb_19|bcd_digit[3][1]_687'
+Slack : -1.543
+TNS   : -166.557
+
+Type  : Fast 1100mV 0C Model Setup 'display_converter:comb_19|bcd_digit[3][1]_687'
+Slack : -8.015
+TNS   : -46.961
+
+Type  : Fast 1100mV 0C Model Hold 'display_converter:comb_19|bcd_digit[3][1]_687'
+Slack : -1.668
+TNS   : -3.771
+
+Type  : Fast 1100mV 0C Model Minimum Pulse Width 'display_converter:comb_19|bcd_digit[3][1]_687'
+Slack : -1.430
+TNS   : -146.694
+
+------------------------------------------------------------

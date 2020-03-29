@@ -1,0 +1,4 @@
+// using KEY[1] as reset, KEY[2] as resume, KEY[0] for player1, KEY[3] for player2
+
+
+module lab2(input CLOCK_50, input [3:0] KEY, output [6:0] HEX0, HEX1, HEX2, HEX3, HEX4, HEX5, output [9:0] LED);

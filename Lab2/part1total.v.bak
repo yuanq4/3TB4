@@ -1,0 +1,9 @@
+module part1(input reset_n, output [6:0] HEX0, HEX1, HEX2, HEX3, HEX4, HEX5);
+
+	part1_sevenseg  decoder0(digit0, HEX0);
+	part1_sevenseg  decoder1(digit1, HEX1);
+	part1_sevenseg  decoder2(digit2, HEX2);
+	part1_sevenseg  decoder3(digit3, HEX3);
+	part1_sevenseg  decoder4(digit4, HEX4);
+	part1_sevenseg  decoder5(digit5, HEX5);
+	

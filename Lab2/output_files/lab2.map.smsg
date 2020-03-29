@@ -1,0 +1,4 @@
+Warning (10268): Verilog HDL information at random.v(7): always construct contains both blocking and non-blocking assignments File: C:/intelFPGA_lite/17.1/Lab2/random.v Line: 7
+Warning (10268): Verilog HDL information at clock_divider.v(10): always construct contains both blocking and non-blocking assignments File: C:/intelFPGA_lite/17.1/Lab2/clock_divider.v Line: 10
+Info (10281): Verilog HDL Declaration information at lab2.v(7): object "WIN1" differs only in case from object "win1" in the same scope File: C:/intelFPGA_lite/17.1/Lab2/lab2.v Line: 7
+Info (10281): Verilog HDL Declaration information at lab2.v(7): object "WIN2" differs only in case from object "win2" in the same scope File: C:/intelFPGA_lite/17.1/Lab2/lab2.v Line: 7

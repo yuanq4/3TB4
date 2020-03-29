@@ -1,0 +1,723 @@
+Analysis & Synthesis report for lab2
+Mon Feb 24 14:48:30 2020
+Quartus Prime Version 17.1.0 Build 590 10/25/2017 SJ Lite Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Analysis & Synthesis Summary
+  3. Analysis & Synthesis Settings
+  4. Parallel Compilation
+  5. Analysis & Synthesis Source Files Read
+  6. Analysis & Synthesis Resource Usage Summary
+  7. Analysis & Synthesis Resource Utilization by Entity
+  8. User-Specified and Inferred Latches
+  9. Registers Removed During Synthesis
+ 10. General Register Statistics
+ 11. Inverted Register Statistics
+ 12. Multiplexer Restructuring Statistics (Restructuring Performed)
+ 13. Parameter Settings for User Entity Instance: Top-level Entity: |lab2
+ 14. Parameter Settings for User Entity Instance: clock_divider:comb_43
+ 15. Parameter Settings for User Entity Instance: blinkLED:comb_46
+ 16. Port Connectivity Checks: "random:comb_47"
+ 17. Port Connectivity Checks: "counter:comb_44"
+ 18. Port Connectivity Checks: "mux41:comb_42"
+ 19. Port Connectivity Checks: "mux41:comb_41"
+ 20. Port Connectivity Checks: "mux41:comb_40"
+ 21. Port Connectivity Checks: "mux41:comb_39"
+ 22. Port Connectivity Checks: "mux41:comb_38"
+ 23. Port Connectivity Checks: "mux41:comb_37"
+ 24. Post-Synthesis Netlist Statistics for Top Partition
+ 25. Elapsed Time Per Partition
+ 26. Analysis & Synthesis Messages
+ 27. Analysis & Synthesis Suppressed Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 2017  Intel Corporation. All rights reserved.
+Your use of Intel Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Intel Program License 
+Subscription Agreement, the Intel Quartus Prime License Agreement,
+the Intel FPGA IP License Agreement, or other applicable license
+agreement, including, without limitation, that your use is for
+the sole purpose of programming logic devices manufactured by
+Intel and sold by Intel or its authorized distributors.  Please
+refer to the applicable agreement for further details.
+
+
+
++-------------------------------------------------------------------------------+
+; Analysis & Synthesis Summary                                                  ;
++---------------------------------+---------------------------------------------+
+; Analysis & Synthesis Status     ; Successful - Mon Feb 24 14:48:30 2020       ;
+; Quartus Prime Version           ; 17.1.0 Build 590 10/25/2017 SJ Lite Edition ;
+; Revision Name                   ; lab2                                        ;
+; Top-level Entity Name           ; lab2                                        ;
+; Family                          ; Cyclone V                                   ;
+; Logic utilization (in ALMs)     ; N/A                                         ;
+; Total registers                 ; 129                                         ;
+; Total pins                      ; 57                                          ;
+; Total virtual pins              ; 0                                           ;
+; Total block memory bits         ; 0                                           ;
+; Total DSP Blocks                ; 0                                           ;
+; Total HSSI RX PCSs              ; 0                                           ;
+; Total HSSI PMA RX Deserializers ; 0                                           ;
+; Total HSSI TX PCSs              ; 0                                           ;
+; Total HSSI PMA TX Serializers   ; 0                                           ;
+; Total PLLs                      ; 0                                           ;
+; Total DLLs                      ; 0                                           ;
++---------------------------------+---------------------------------------------+
+
+
++---------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Settings                                                                                             ;
++---------------------------------------------------------------------------------+--------------------+--------------------+
+; Option                                                                          ; Setting            ; Default Value      ;
++---------------------------------------------------------------------------------+--------------------+--------------------+
+; Device                                                                          ; 5CSEMA5F31C6       ;                    ;
+; Top-level entity name                                                           ; lab2               ; lab2               ;
+; Family name                                                                     ; Cyclone V          ; Cyclone V          ;
+; Use smart compilation                                                           ; Off                ; Off                ;
+; Enable parallel Assembler and TimeQuest Timing Analyzer during compilation      ; On                 ; On                 ;
+; Enable compact report table                                                     ; Off                ; Off                ;
+; Restructure Multiplexers                                                        ; Auto               ; Auto               ;
+; MLAB Add Timing Constraints For Mixed-Port Feed-Through Mode Setting Don't Care ; Off                ; Off                ;
+; Create Debugging Nodes for IP Cores                                             ; Off                ; Off                ;
+; Preserve fewer node names                                                       ; On                 ; On                 ;
+; Intel FPGA IP Evaluation Mode                                                   ; Enable             ; Enable             ;
+; Verilog Version                                                                 ; Verilog_2001       ; Verilog_2001       ;
+; VHDL Version                                                                    ; VHDL_1993          ; VHDL_1993          ;
+; State Machine Processing                                                        ; Auto               ; Auto               ;
+; Safe State Machine                                                              ; Off                ; Off                ;
+; Extract Verilog State Machines                                                  ; On                 ; On                 ;
+; Extract VHDL State Machines                                                     ; On                 ; On                 ;
+; Ignore Verilog initial constructs                                               ; Off                ; Off                ;
+; Iteration limit for constant Verilog loops                                      ; 5000               ; 5000               ;
+; Iteration limit for non-constant Verilog loops                                  ; 250                ; 250                ;
+; Add Pass-Through Logic to Inferred RAMs                                         ; On                 ; On                 ;
+; Infer RAMs from Raw Logic                                                       ; On                 ; On                 ;
+; Parallel Synthesis                                                              ; On                 ; On                 ;
+; DSP Block Balancing                                                             ; Auto               ; Auto               ;
+; NOT Gate Push-Back                                                              ; On                 ; On                 ;
+; Power-Up Don't Care                                                             ; On                 ; On                 ;
+; Remove Redundant Logic Cells                                                    ; Off                ; Off                ;
+; Remove Duplicate Registers                                                      ; On                 ; On                 ;
+; Ignore CARRY Buffers                                                            ; Off                ; Off                ;
+; Ignore CASCADE Buffers                                                          ; Off                ; Off                ;
+; Ignore GLOBAL Buffers                                                           ; Off                ; Off                ;
+; Ignore ROW GLOBAL Buffers                                                       ; Off                ; Off                ;
+; Ignore LCELL Buffers                                                            ; Off                ; Off                ;
+; Ignore SOFT Buffers                                                             ; On                 ; On                 ;
+; Limit AHDL Integers to 32 Bits                                                  ; Off                ; Off                ;
+; Optimization Technique                                                          ; Balanced           ; Balanced           ;
+; Carry Chain Length                                                              ; 70                 ; 70                 ;
+; Auto Carry Chains                                                               ; On                 ; On                 ;
+; Auto Open-Drain Pins                                                            ; On                 ; On                 ;
+; Perform WYSIWYG Primitive Resynthesis                                           ; Off                ; Off                ;
+; Auto ROM Replacement                                                            ; On                 ; On                 ;
+; Auto RAM Replacement                                                            ; On                 ; On                 ;
+; Auto DSP Block Replacement                                                      ; On                 ; On                 ;
+; Auto Shift Register Replacement                                                 ; Auto               ; Auto               ;
+; Allow Shift Register Merging across Hierarchies                                 ; Auto               ; Auto               ;
+; Auto Clock Enable Replacement                                                   ; On                 ; On                 ;
+; Strict RAM Replacement                                                          ; Off                ; Off                ;
+; Allow Synchronous Control Signals                                               ; On                 ; On                 ;
+; Force Use of Synchronous Clear Signals                                          ; Off                ; Off                ;
+; Auto Resource Sharing                                                           ; Off                ; Off                ;
+; Allow Any RAM Size For Recognition                                              ; Off                ; Off                ;
+; Allow Any ROM Size For Recognition                                              ; Off                ; Off                ;
+; Allow Any Shift Register Size For Recognition                                   ; Off                ; Off                ;
+; Use LogicLock Constraints during Resource Balancing                             ; On                 ; On                 ;
+; Ignore translate_off and synthesis_off directives                               ; Off                ; Off                ;
+; Timing-Driven Synthesis                                                         ; On                 ; On                 ;
+; Report Parameter Settings                                                       ; On                 ; On                 ;
+; Report Source Assignments                                                       ; On                 ; On                 ;
+; Report Connectivity Checks                                                      ; On                 ; On                 ;
+; Ignore Maximum Fan-Out Assignments                                              ; Off                ; Off                ;
+; Synchronization Register Chain Length                                           ; 3                  ; 3                  ;
+; Power Optimization During Synthesis                                             ; Normal compilation ; Normal compilation ;
+; HDL message level                                                               ; Level2             ; Level2             ;
+; Suppress Register Optimization Related Messages                                 ; Off                ; Off                ;
+; Number of Removed Registers Reported in Synthesis Report                        ; 5000               ; 5000               ;
+; Number of Swept Nodes Reported in Synthesis Report                              ; 5000               ; 5000               ;
+; Number of Inverted Registers Reported in Synthesis Report                       ; 100                ; 100                ;
+; Clock MUX Protection                                                            ; On                 ; On                 ;
+; Auto Gated Clock Conversion                                                     ; Off                ; Off                ;
+; Block Design Naming                                                             ; Auto               ; Auto               ;
+; SDC constraint protection                                                       ; Off                ; Off                ;
+; Synthesis Effort                                                                ; Auto               ; Auto               ;
+; Shift Register Replacement - Allow Asynchronous Clear Signal                    ; On                 ; On                 ;
+; Pre-Mapping Resynthesis Optimization                                            ; Off                ; Off                ;
+; Analysis & Synthesis Message Level                                              ; Medium             ; Medium             ;
+; Disable Register Merging Across Hierarchies                                     ; Auto               ; Auto               ;
+; Resource Aware Inference For Block RAM                                          ; On                 ; On                 ;
+; Automatic Parallel Synthesis                                                    ; On                 ; On                 ;
+; Partial Reconfiguration Bitstream ID                                            ; Off                ; Off                ;
++---------------------------------------------------------------------------------+--------------------+--------------------+
+
+
++------------------------------------------+
+; Parallel Compilation                     ;
++----------------------------+-------------+
+; Processors                 ; Number      ;
++----------------------------+-------------+
+; Number detected on machine ; 12          ;
+; Maximum allowed            ; 6           ;
+;                            ;             ;
+; Average used               ; 1.00        ;
+; Maximum used               ; 6           ;
+;                            ;             ;
+; Usage by Processor         ; % Time Used ;
+;     Processor 1            ; 100.0%      ;
+;     Processors 2-6         ;   0.0%      ;
++----------------------------+-------------+
+
+
++--------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                     ;
++----------------------------------+-----------------+------------------------+----------------------------------------------------+---------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type              ; File Name with Absolute Path                       ; Library ;
++----------------------------------+-----------------+------------------------+----------------------------------------------------+---------+
+; random.v                         ; yes             ; User Verilog HDL File  ; C:/intelFPGA_lite/17.1/Lab2/random.v               ;         ;
+; mux41.v                          ; yes             ; User Verilog HDL File  ; C:/intelFPGA_lite/17.1/Lab2/mux41.v                ;         ;
+; hex_to_bcd_converter.v           ; yes             ; User Verilog HDL File  ; C:/intelFPGA_lite/17.1/Lab2/hex_to_bcd_converter.v ;         ;
+; counter.v                        ; yes             ; User Verilog HDL File  ; C:/intelFPGA_lite/17.1/Lab2/counter.v              ;         ;
+; clock_divider.v                  ; yes             ; User Verilog HDL File  ; C:/intelFPGA_lite/17.1/Lab2/clock_divider.v        ;         ;
+; seven_seg_decoder.v              ; yes             ; User Verilog HDL File  ; C:/intelFPGA_lite/17.1/Lab2/seven_seg_decoder.v    ;         ;
+; blinkLED.v                       ; yes             ; User Verilog HDL File  ; C:/intelFPGA_lite/17.1/Lab2/blinkLED.v             ;         ;
+; lab2.v                           ; yes             ; User Verilog HDL File  ; C:/intelFPGA_lite/17.1/Lab2/lab2.v                 ;         ;
++----------------------------------+-----------------+------------------------+----------------------------------------------------+---------+
+
+
++------------------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary                ;
++---------------------------------------------+--------------+
+; Resource                                    ; Usage        ;
++---------------------------------------------+--------------+
+; Estimate of Logic utilization (ALMs needed) ; 350          ;
+;                                             ;              ;
+; Combinational ALUT usage for logic          ; 548          ;
+;     -- 7 input functions                    ; 14           ;
+;     -- 6 input functions                    ; 136          ;
+;     -- 5 input functions                    ; 80           ;
+;     -- 4 input functions                    ; 85           ;
+;     -- <=3 input functions                  ; 233          ;
+;                                             ;              ;
+; Dedicated logic registers                   ; 129          ;
+;                                             ;              ;
+; I/O pins                                    ; 57           ;
+;                                             ;              ;
+; Total DSP Blocks                            ; 0            ;
+;                                             ;              ;
+; Maximum fan-out node                        ; KEY[1]~input ;
+; Maximum fan-out                             ; 78           ;
+; Total fan-out                               ; 2760         ;
+; Average fan-out                             ; 3.49         ;
++---------------------------------------------+--------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                               ;
++-----------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+------------------------------------------+----------------------+--------------+
+; Compilation Hierarchy Node              ; Combinational ALUTs ; Dedicated Logic Registers ; Block Memory Bits ; DSP Blocks ; Pins ; Virtual Pins ; Full Hierarchy Name                      ; Entity Name          ; Library Name ;
++-----------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+------------------------------------------+----------------------+--------------+
+; |lab2                                   ; 548 (98)            ; 129 (18)                  ; 0                 ; 0          ; 57   ; 0            ; |lab2                                    ; lab2                 ; work         ;
+;    |blinkLED:comb_46|                   ; 17 (17)             ; 13 (13)                   ; 0                 ; 0          ; 0    ; 0            ; |lab2|blinkLED:comb_46                   ; blinkLED             ; work         ;
+;    |clock_divider:comb_43|              ; 40 (40)             ; 33 (33)                   ; 0                 ; 0          ; 0    ; 0            ; |lab2|clock_divider:comb_43              ; clock_divider        ; work         ;
+;    |counter:comb_44|                    ; 20 (20)             ; 20 (20)                   ; 0                 ; 0          ; 0    ; 0            ; |lab2|counter:comb_44                    ; counter              ; work         ;
+;    |counter:comb_45|                    ; 20 (20)             ; 20 (20)                   ; 0                 ; 0          ; 0    ; 0            ; |lab2|counter:comb_45                    ; counter              ; work         ;
+;    |hex_to_bcd_converter:clockConvert|  ; 128 (128)           ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |lab2|hex_to_bcd_converter:clockConvert  ; hex_to_bcd_converter ; work         ;
+;    |hex_to_bcd_converter:winnerConvert| ; 93 (93)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |lab2|hex_to_bcd_converter:winnerConvert ; hex_to_bcd_converter ; work         ;
+;    |mux41:comb_37|                      ; 15 (15)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |lab2|mux41:comb_37                      ; mux41                ; work         ;
+;    |mux41:comb_38|                      ; 8 (8)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |lab2|mux41:comb_38                      ; mux41                ; work         ;
+;    |mux41:comb_39|                      ; 13 (13)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |lab2|mux41:comb_39                      ; mux41                ; work         ;
+;    |mux41:comb_40|                      ; 11 (11)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |lab2|mux41:comb_40                      ; mux41                ; work         ;
+;    |mux41:comb_41|                      ; 9 (9)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |lab2|mux41:comb_41                      ; mux41                ; work         ;
+;    |mux41:comb_42|                      ; 12 (12)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |lab2|mux41:comb_42                      ; mux41                ; work         ;
+;    |random:comb_47|                     ; 22 (22)             ; 25 (25)                   ; 0                 ; 0          ; 0    ; 0            ; |lab2|random:comb_47                     ; random               ; work         ;
+;    |seven_seg_decoder:decoder0|         ; 7 (7)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |lab2|seven_seg_decoder:decoder0         ; seven_seg_decoder    ; work         ;
+;    |seven_seg_decoder:decoder1|         ; 7 (7)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |lab2|seven_seg_decoder:decoder1         ; seven_seg_decoder    ; work         ;
+;    |seven_seg_decoder:decoder2|         ; 7 (7)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |lab2|seven_seg_decoder:decoder2         ; seven_seg_decoder    ; work         ;
+;    |seven_seg_decoder:decoder3|         ; 7 (7)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |lab2|seven_seg_decoder:decoder3         ; seven_seg_decoder    ; work         ;
+;    |seven_seg_decoder:decoder4|         ; 7 (7)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |lab2|seven_seg_decoder:decoder4         ; seven_seg_decoder    ; work         ;
+;    |seven_seg_decoder:decoder5|         ; 7 (7)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |lab2|seven_seg_decoder:decoder5         ; seven_seg_decoder    ; work         ;
++-----------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+------------------------------------------+----------------------+--------------+
+Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
+
+
++----------------------------------------------------------------------------------------------------+
+; User-Specified and Inferred Latches                                                                ;
++-----------------------------------------------------+---------------------+------------------------+
+; Latch Name                                          ; Latch Enable Signal ; Free of Timing Hazards ;
++-----------------------------------------------------+---------------------+------------------------+
+; mux41:comb_37|Out[0]                                ; mux41:comb_37|Mux4  ; yes                    ;
+; mux41:comb_37|Out[1]                                ; mux41:comb_37|Mux4  ; yes                    ;
+; mux41:comb_37|Out[2]                                ; mux41:comb_37|Mux4  ; yes                    ;
+; mux41:comb_37|Out[3]                                ; mux41:comb_37|Mux4  ; yes                    ;
+; mux41:comb_38|Out[0]                                ; mux41:comb_37|Mux4  ; yes                    ;
+; mux41:comb_38|Out[1]                                ; mux41:comb_37|Mux4  ; yes                    ;
+; mux41:comb_38|Out[2]                                ; mux41:comb_37|Mux4  ; yes                    ;
+; mux41:comb_38|Out[3]                                ; mux41:comb_37|Mux4  ; yes                    ;
+; mux41:comb_39|Out[0]                                ; mux41:comb_37|Mux4  ; yes                    ;
+; mux41:comb_39|Out[1]                                ; mux41:comb_37|Mux4  ; yes                    ;
+; mux41:comb_39|Out[2]                                ; mux41:comb_37|Mux4  ; yes                    ;
+; mux41:comb_39|Out[3]                                ; mux41:comb_37|Mux4  ; yes                    ;
+; mux41:comb_40|Out[0]                                ; mux41:comb_37|Mux4  ; yes                    ;
+; mux41:comb_40|Out[1]                                ; mux41:comb_37|Mux4  ; yes                    ;
+; mux41:comb_40|Out[2]                                ; mux41:comb_37|Mux4  ; yes                    ;
+; mux41:comb_40|Out[3]                                ; mux41:comb_37|Mux4  ; yes                    ;
+; mux41:comb_41|Out[0]                                ; mux41:comb_37|Mux4  ; yes                    ;
+; mux41:comb_41|Out[1]                                ; mux41:comb_37|Mux4  ; yes                    ;
+; mux41:comb_41|Out[2]                                ; mux41:comb_37|Mux4  ; yes                    ;
+; mux41:comb_41|Out[3]                                ; mux41:comb_37|Mux4  ; yes                    ;
+; mux41:comb_42|Out[0]                                ; mux41:comb_37|Mux4  ; yes                    ;
+; mux41:comb_42|Out[1]                                ; mux41:comb_37|Mux4  ; yes                    ;
+; mux41:comb_42|Out[2]                                ; mux41:comb_37|Mux4  ; yes                    ;
+; mux41:comb_42|Out[3]                                ; mux41:comb_37|Mux4  ; yes                    ;
+; hex_sel[2]                                          ; state.BLINKING      ; yes                    ;
+; hex_sel[0]                                          ; state.BLINKING      ; yes                    ;
+; winner_time[1]                                      ; WideOr2             ; yes                    ;
+; hex_sel[1]                                          ; state.BLINKING      ; yes                    ;
+; winner_time[2]                                      ; WideOr2             ; yes                    ;
+; winner_time[3]                                      ; WideOr2             ; yes                    ;
+; winner_time[4]                                      ; WideOr2             ; yes                    ;
+; winner_time[5]                                      ; WideOr2             ; yes                    ;
+; winner_time[6]                                      ; WideOr2             ; yes                    ;
+; winner_time[7]                                      ; WideOr2             ; yes                    ;
+; winner_time[8]                                      ; WideOr2             ; yes                    ;
+; winner_time[9]                                      ; WideOr2             ; yes                    ;
+; winner_time[10]                                     ; WideOr2             ; yes                    ;
+; winner_time[11]                                     ; WideOr2             ; yes                    ;
+; winner_time[12]                                     ; WideOr2             ; yes                    ;
+; winner_time[13]                                     ; WideOr2             ; yes                    ;
+; winner_time[14]                                     ; WideOr2             ; yes                    ;
+; winner_time[15]                                     ; WideOr2             ; yes                    ;
+; winner_time[16]                                     ; WideOr2             ; yes                    ;
+; winner_time[17]                                     ; WideOr2             ; yes                    ;
+; winner_time[19]                                     ; WideOr2             ; yes                    ;
+; winner_time[18]                                     ; WideOr2             ; yes                    ;
+; display_counter_start                               ; WideOr1             ; yes                    ;
+; Number of user-specified and inferred latches = 47  ;                     ;                        ;
++-----------------------------------------------------+---------------------+------------------------+
+Note: All latches listed above may not be present at the end of synthesis due to various synthesis optimizations.
+
+
++------------------------------------------------------------------------------------+
+; Registers Removed During Synthesis                                                 ;
++----------------------------------------+-------------------------------------------+
+; Register name                          ; Reason for Removal                        ;
++----------------------------------------+-------------------------------------------+
+; blinkLED:comb_46|d0[0..3]              ; Merged with blinkLED:comb_46|d3[0]        ;
+; blinkLED:comb_46|d1[0..3]              ; Merged with blinkLED:comb_46|d3[0]        ;
+; blinkLED:comb_46|d2[0..3]              ; Merged with blinkLED:comb_46|d3[0]        ;
+; blinkLED:comb_46|d3[1..3]              ; Merged with blinkLED:comb_46|d3[0]        ;
+; random:comb_47|random[13]              ; Merged with random:comb_47|random[12]     ;
+; random:comb_47|reg_values[13]          ; Merged with random:comb_47|reg_values[12] ;
+; random:comb_47|random[12]              ; Stuck at GND due to stuck port data_in    ;
+; Total Number of Removed Registers = 18 ;                                           ;
++----------------------------------------+-------------------------------------------+
+
+
++------------------------------------------------------+
+; General Register Statistics                          ;
++----------------------------------------------+-------+
+; Statistic                                    ; Value ;
++----------------------------------------------+-------+
+; Total registers                              ; 129   ;
+; Number of registers using Synchronous Clear  ; 46    ;
+; Number of registers using Synchronous Load   ; 0     ;
+; Number of registers using Asynchronous Clear ; 117   ;
+; Number of registers using Asynchronous Load  ; 0     ;
+; Number of registers using Clock Enable       ; 59    ;
+; Number of registers using Preset             ; 0     ;
++----------------------------------------------+-------+
+
+
++---------------------------------------------------+
+; Inverted Register Statistics                      ;
++-----------------------------------------+---------+
+; Inverted Register                       ; Fan out ;
++-----------------------------------------+---------+
+; random:comb_47|reg_values[3]            ; 2       ;
+; random:comb_47|reg_values[12]           ; 2       ;
+; random:comb_47|reg_values[4]            ; 4       ;
+; random:comb_47|reg_values[9]            ; 3       ;
+; random:comb_47|reg_values[8]            ; 3       ;
+; random:comb_47|reg_values[7]            ; 3       ;
+; random:comb_47|reg_values[5]            ; 2       ;
+; random:comb_47|reg_values[10]           ; 3       ;
+; random:comb_47|reg_values[1]            ; 1       ;
+; random:comb_47|reg_values[0]            ; 5       ;
+; Total number of inverted registers = 10 ;         ;
++-----------------------------------------+---------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------------+
+; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+---------------------------------+
+; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output      ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+---------------------------------+
+; 9:1                ; 4 bits    ; 24 LEs        ; 16 LEs               ; 8 LEs                  ; Yes        ; |lab2|state.WINNER_TIME_DISPLAY ;
+; 10:1               ; 2 bits    ; 12 LEs        ; 6 LEs                ; 6 LEs                  ; Yes        ; |lab2|state.OFF                 ;
+; 9:1                ; 2 bits    ; 12 LEs        ; 4 LEs                ; 8 LEs                  ; Yes        ; |lab2|state.RESUME              ;
+; 5:1                ; 3 bits    ; 9 LEs         ; 6 LEs                ; 3 LEs                  ; No         ; |lab2|mux41:comb_37|Mux3        ;
+; 5:1                ; 3 bits    ; 9 LEs         ; 6 LEs                ; 3 LEs                  ; No         ; |lab2|mux41:comb_39|Mux0        ;
+; 5:1                ; 3 bits    ; 9 LEs         ; 6 LEs                ; 3 LEs                  ; No         ; |lab2|mux41:comb_39|Mux3        ;
+; 5:1                ; 2 bits    ; 6 LEs         ; 4 LEs                ; 2 LEs                  ; No         ; |lab2|mux41:comb_40|Mux2        ;
+; 8:1                ; 3 bits    ; 15 LEs        ; 12 LEs               ; 3 LEs                  ; No         ; |lab2|mux41:comb_42|Mux0        ;
+; 8:1                ; 2 bits    ; 10 LEs        ; 8 LEs                ; 2 LEs                  ; No         ; |lab2|mux41:comb_42|Mux3        ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+---------------------------------+
+
+
++----------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: Top-level Entity: |lab2 ;
++---------------------+-------+----------------------------------------+
+; Parameter Name      ; Value ; Type                                   ;
++---------------------+-------+----------------------------------------+
+; RESET               ; 000   ; Unsigned Binary                        ;
+; RESUME              ; 001   ; Unsigned Binary                        ;
+; BLINKING            ; 010   ; Unsigned Binary                        ;
+; OFF                 ; 011   ; Unsigned Binary                        ;
+; TIMER_DISPLAY       ; 100   ; Unsigned Binary                        ;
+; WINNER_TIME_DISPLAY ; 101   ; Unsigned Binary                        ;
+; WIN1                ; 110   ; Unsigned Binary                        ;
+; WIN2                ; 111   ; Unsigned Binary                        ;
++---------------------+-------+----------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++--------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: clock_divider:comb_43 ;
++----------------+-------+-------------------------------------------+
+; Parameter Name ; Value ; Type                                      ;
++----------------+-------+-------------------------------------------+
+; factor         ; 50000 ; Signed Integer                            ;
++----------------+-------+-------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++---------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: blinkLED:comb_46 ;
++----------------+-------+--------------------------------------+
+; Parameter Name ; Value ; Type                                 ;
++----------------+-------+--------------------------------------+
+; factor         ; 50    ; Signed Integer                       ;
++----------------+-------+--------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++---------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "random:comb_47"                                                                          ;
++-----------+--------+----------+-------------------------------------------------------------------------------------+
+; Port      ; Type   ; Severity ; Details                                                                             ;
++-----------+--------+----------+-------------------------------------------------------------------------------------+
+; rnd_ready ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++-----------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "counter:comb_44"                                                                                                                                                                        ;
++------------+-------+----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port       ; Type  ; Severity ; Details                                                                                                                                                                            ;
++------------+-------+----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; enable     ; Input ; Warning  ; Input port expression (32 bits) is wider than the input port (1 bits) it drives.  The 31 most-significant bit(s) in the expression will be dangling if they have no other fanouts. ;
+; enable[-1] ; Input ; Info     ; Stuck at VCC                                                                                                                                                                       ;
++------------+-------+----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+
++--------------------------------------------+
+; Port Connectivity Checks: "mux41:comb_42"  ;
++----------+-------+----------+--------------+
+; Port     ; Type  ; Severity ; Details      ;
++----------+-------+----------+--------------+
+; a2       ; Input ; Info     ; Stuck at VCC ;
+; a5[3..1] ; Input ; Info     ; Stuck at GND ;
+; a5[0]    ; Input ; Info     ; Stuck at VCC ;
+; a6[3..2] ; Input ; Info     ; Stuck at GND ;
+; a6[1]    ; Input ; Info     ; Stuck at VCC ;
+; a6[0]    ; Input ; Info     ; Stuck at GND ;
++----------+-------+----------+--------------+
+
+
++--------------------------------------------+
+; Port Connectivity Checks: "mux41:comb_41"  ;
++----------+-------+----------+--------------+
+; Port     ; Type  ; Severity ; Details      ;
++----------+-------+----------+--------------+
+; a2       ; Input ; Info     ; Stuck at VCC ;
+; a5[3..1] ; Input ; Info     ; Stuck at GND ;
+; a5[0]    ; Input ; Info     ; Stuck at VCC ;
+; a6[3..2] ; Input ; Info     ; Stuck at GND ;
+; a6[1]    ; Input ; Info     ; Stuck at VCC ;
+; a6[0]    ; Input ; Info     ; Stuck at GND ;
++----------+-------+----------+--------------+
+
+
++--------------------------------------------+
+; Port Connectivity Checks: "mux41:comb_40"  ;
++----------+-------+----------+--------------+
+; Port     ; Type  ; Severity ; Details      ;
++----------+-------+----------+--------------+
+; a2       ; Input ; Info     ; Stuck at VCC ;
+; a5[3..1] ; Input ; Info     ; Stuck at GND ;
+; a5[0]    ; Input ; Info     ; Stuck at VCC ;
+; a6[3..2] ; Input ; Info     ; Stuck at GND ;
+; a6[1]    ; Input ; Info     ; Stuck at VCC ;
+; a6[0]    ; Input ; Info     ; Stuck at GND ;
++----------+-------+----------+--------------+
+
+
++--------------------------------------------+
+; Port Connectivity Checks: "mux41:comb_39"  ;
++----------+-------+----------+--------------+
+; Port     ; Type  ; Severity ; Details      ;
++----------+-------+----------+--------------+
+; a2       ; Input ; Info     ; Stuck at VCC ;
+; a5[3..1] ; Input ; Info     ; Stuck at GND ;
+; a5[0]    ; Input ; Info     ; Stuck at VCC ;
+; a6[3..2] ; Input ; Info     ; Stuck at GND ;
+; a6[1]    ; Input ; Info     ; Stuck at VCC ;
+; a6[0]    ; Input ; Info     ; Stuck at GND ;
++----------+-------+----------+--------------+
+
+
++--------------------------------------------+
+; Port Connectivity Checks: "mux41:comb_38"  ;
++----------+-------+----------+--------------+
+; Port     ; Type  ; Severity ; Details      ;
++----------+-------+----------+--------------+
+; a2       ; Input ; Info     ; Stuck at VCC ;
+; a5[3..1] ; Input ; Info     ; Stuck at GND ;
+; a5[0]    ; Input ; Info     ; Stuck at VCC ;
+; a6[3..2] ; Input ; Info     ; Stuck at GND ;
+; a6[1]    ; Input ; Info     ; Stuck at VCC ;
+; a6[0]    ; Input ; Info     ; Stuck at GND ;
++----------+-------+----------+--------------+
+
+
++--------------------------------------------+
+; Port Connectivity Checks: "mux41:comb_37"  ;
++----------+-------+----------+--------------+
+; Port     ; Type  ; Severity ; Details      ;
++----------+-------+----------+--------------+
+; a2       ; Input ; Info     ; Stuck at VCC ;
+; a5[3..1] ; Input ; Info     ; Stuck at GND ;
+; a5[0]    ; Input ; Info     ; Stuck at VCC ;
+; a6[3..2] ; Input ; Info     ; Stuck at GND ;
+; a6[1]    ; Input ; Info     ; Stuck at VCC ;
+; a6[0]    ; Input ; Info     ; Stuck at GND ;
++----------+-------+----------+--------------+
+
+
++-----------------------------------------------------+
+; Post-Synthesis Netlist Statistics for Top Partition ;
++-----------------------+-----------------------------+
+; Type                  ; Count                       ;
++-----------------------+-----------------------------+
+; arriav_ff             ; 129                         ;
+;     CLR               ; 26                          ;
+;     CLR SCLR          ; 44                          ;
+;     ENA               ; 12                          ;
+;     ENA CLR           ; 45                          ;
+;     ENA CLR SCLR      ; 2                           ;
+; arriav_lcell_comb     ; 554                         ;
+;     arith             ; 93                          ;
+;         0 data inputs ; 2                           ;
+;         1 data inputs ; 89                          ;
+;         2 data inputs ; 2                           ;
+;     extend            ; 14                          ;
+;         7 data inputs ; 14                          ;
+;     normal            ; 447                         ;
+;         1 data inputs ; 22                          ;
+;         2 data inputs ; 50                          ;
+;         3 data inputs ; 74                          ;
+;         4 data inputs ; 85                          ;
+;         5 data inputs ; 80                          ;
+;         6 data inputs ; 136                         ;
+; boundary_port         ; 57                          ;
+;                       ;                             ;
+; Max LUT depth         ; 12.00                       ;
+; Average LUT depth     ; 5.92                        ;
++-----------------------+-----------------------------+
+
+
++-------------------------------+
+; Elapsed Time Per Partition    ;
++----------------+--------------+
+; Partition Name ; Elapsed Time ;
++----------------+--------------+
+; Top            ; 00:00:06     ;
++----------------+--------------+
+
+
++-------------------------------+
+; Analysis & Synthesis Messages ;
++-------------------------------+
+Info: *******************************************************************
+Info: Running Quartus Prime Analysis & Synthesis
+    Info: Version 17.1.0 Build 590 10/25/2017 SJ Lite Edition
+    Info: Processing started: Mon Feb 24 14:48:13 2020
+Info: Command: quartus_map --read_settings_files=on --write_settings_files=off lab2 -c lab2
+Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
+Info (20030): Parallel compilation is enabled and will use 6 of the 6 processors detected
+Info (12021): Found 1 design units, including 1 entities, in source file random.v
+    Info (12023): Found entity 1: random File: C:/intelFPGA_lite/17.1/Lab2/random.v Line: 1
+Warning (12090): Entity "mux41" obtained from "mux41.v" instead of from Quartus Prime megafunction library File: C:/intelFPGA_lite/17.1/Lab2/mux41.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file mux41.v
+    Info (12023): Found entity 1: mux41 File: C:/intelFPGA_lite/17.1/Lab2/mux41.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file hex_to_bcd_converter.v
+    Info (12023): Found entity 1: hex_to_bcd_converter File: C:/intelFPGA_lite/17.1/Lab2/hex_to_bcd_converter.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file counter.v
+    Info (12023): Found entity 1: counter File: C:/intelFPGA_lite/17.1/Lab2/counter.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file clock_divider.v
+    Info (12023): Found entity 1: clock_divider File: C:/intelFPGA_lite/17.1/Lab2/clock_divider.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file seven_seg_decoder.v
+    Info (12023): Found entity 1: seven_seg_decoder File: C:/intelFPGA_lite/17.1/Lab2/seven_seg_decoder.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file blinkled.v
+    Info (12023): Found entity 1: blinkLED File: C:/intelFPGA_lite/17.1/Lab2/blinkLED.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file lab2.v
+    Info (12023): Found entity 1: lab2 File: C:/intelFPGA_lite/17.1/Lab2/lab2.v Line: 4
+Critical Warning (10846): Verilog HDL Instantiation warning at lab2.v(50): instance has no name File: C:/intelFPGA_lite/17.1/Lab2/lab2.v Line: 50
+Critical Warning (10846): Verilog HDL Instantiation warning at lab2.v(51): instance has no name File: C:/intelFPGA_lite/17.1/Lab2/lab2.v Line: 51
+Critical Warning (10846): Verilog HDL Instantiation warning at lab2.v(52): instance has no name File: C:/intelFPGA_lite/17.1/Lab2/lab2.v Line: 52
+Critical Warning (10846): Verilog HDL Instantiation warning at lab2.v(53): instance has no name File: C:/intelFPGA_lite/17.1/Lab2/lab2.v Line: 53
+Critical Warning (10846): Verilog HDL Instantiation warning at lab2.v(54): instance has no name File: C:/intelFPGA_lite/17.1/Lab2/lab2.v Line: 54
+Critical Warning (10846): Verilog HDL Instantiation warning at lab2.v(55): instance has no name File: C:/intelFPGA_lite/17.1/Lab2/lab2.v Line: 55
+Critical Warning (10846): Verilog HDL Instantiation warning at lab2.v(56): instance has no name File: C:/intelFPGA_lite/17.1/Lab2/lab2.v Line: 56
+Critical Warning (10846): Verilog HDL Instantiation warning at lab2.v(58): instance has no name File: C:/intelFPGA_lite/17.1/Lab2/lab2.v Line: 58
+Critical Warning (10846): Verilog HDL Instantiation warning at lab2.v(60): instance has no name File: C:/intelFPGA_lite/17.1/Lab2/lab2.v Line: 60
+Critical Warning (10846): Verilog HDL Instantiation warning at lab2.v(62): instance has no name File: C:/intelFPGA_lite/17.1/Lab2/lab2.v Line: 62
+Critical Warning (10846): Verilog HDL Instantiation warning at lab2.v(74): instance has no name File: C:/intelFPGA_lite/17.1/Lab2/lab2.v Line: 74
+Info (12127): Elaborating entity "lab2" for the top level hierarchy
+Warning (10036): Verilog HDL or VHDL warning at lab2.v(23): object "w_hex_sel" assigned a value but never read File: C:/intelFPGA_lite/17.1/Lab2/lab2.v Line: 23
+Warning (10240): Verilog HDL Always Construct warning at lab2.v(125): inferring latch(es) for variable "display_counter_start", which holds its previous value in one or more paths through the always construct File: C:/intelFPGA_lite/17.1/Lab2/lab2.v Line: 125
+Warning (10240): Verilog HDL Always Construct warning at lab2.v(125): inferring latch(es) for variable "winner_time", which holds its previous value in one or more paths through the always construct File: C:/intelFPGA_lite/17.1/Lab2/lab2.v Line: 125
+Warning (10240): Verilog HDL Always Construct warning at lab2.v(125): inferring latch(es) for variable "hex_sel", which holds its previous value in one or more paths through the always construct File: C:/intelFPGA_lite/17.1/Lab2/lab2.v Line: 125
+Info (10041): Inferred latch for "hex_sel[0]" at lab2.v(125) File: C:/intelFPGA_lite/17.1/Lab2/lab2.v Line: 125
+Info (10041): Inferred latch for "hex_sel[1]" at lab2.v(125) File: C:/intelFPGA_lite/17.1/Lab2/lab2.v Line: 125
+Info (10041): Inferred latch for "hex_sel[2]" at lab2.v(125) File: C:/intelFPGA_lite/17.1/Lab2/lab2.v Line: 125
+Info (10041): Inferred latch for "winner_time[0]" at lab2.v(125) File: C:/intelFPGA_lite/17.1/Lab2/lab2.v Line: 125
+Info (10041): Inferred latch for "winner_time[1]" at lab2.v(125) File: C:/intelFPGA_lite/17.1/Lab2/lab2.v Line: 125
+Info (10041): Inferred latch for "winner_time[2]" at lab2.v(125) File: C:/intelFPGA_lite/17.1/Lab2/lab2.v Line: 125
+Info (10041): Inferred latch for "winner_time[3]" at lab2.v(125) File: C:/intelFPGA_lite/17.1/Lab2/lab2.v Line: 125
+Info (10041): Inferred latch for "winner_time[4]" at lab2.v(125) File: C:/intelFPGA_lite/17.1/Lab2/lab2.v Line: 125
+Info (10041): Inferred latch for "winner_time[5]" at lab2.v(125) File: C:/intelFPGA_lite/17.1/Lab2/lab2.v Line: 125
+Info (10041): Inferred latch for "winner_time[6]" at lab2.v(125) File: C:/intelFPGA_lite/17.1/Lab2/lab2.v Line: 125
+Info (10041): Inferred latch for "winner_time[7]" at lab2.v(125) File: C:/intelFPGA_lite/17.1/Lab2/lab2.v Line: 125
+Info (10041): Inferred latch for "winner_time[8]" at lab2.v(125) File: C:/intelFPGA_lite/17.1/Lab2/lab2.v Line: 125
+Info (10041): Inferred latch for "winner_time[9]" at lab2.v(125) File: C:/intelFPGA_lite/17.1/Lab2/lab2.v Line: 125
+Info (10041): Inferred latch for "winner_time[10]" at lab2.v(125) File: C:/intelFPGA_lite/17.1/Lab2/lab2.v Line: 125
+Info (10041): Inferred latch for "winner_time[11]" at lab2.v(125) File: C:/intelFPGA_lite/17.1/Lab2/lab2.v Line: 125
+Info (10041): Inferred latch for "winner_time[12]" at lab2.v(125) File: C:/intelFPGA_lite/17.1/Lab2/lab2.v Line: 125
+Info (10041): Inferred latch for "winner_time[13]" at lab2.v(125) File: C:/intelFPGA_lite/17.1/Lab2/lab2.v Line: 125
+Info (10041): Inferred latch for "winner_time[14]" at lab2.v(125) File: C:/intelFPGA_lite/17.1/Lab2/lab2.v Line: 125
+Info (10041): Inferred latch for "winner_time[15]" at lab2.v(125) File: C:/intelFPGA_lite/17.1/Lab2/lab2.v Line: 125
+Info (10041): Inferred latch for "winner_time[16]" at lab2.v(125) File: C:/intelFPGA_lite/17.1/Lab2/lab2.v Line: 125
+Info (10041): Inferred latch for "winner_time[17]" at lab2.v(125) File: C:/intelFPGA_lite/17.1/Lab2/lab2.v Line: 125
+Info (10041): Inferred latch for "winner_time[18]" at lab2.v(125) File: C:/intelFPGA_lite/17.1/Lab2/lab2.v Line: 125
+Info (10041): Inferred latch for "winner_time[19]" at lab2.v(125) File: C:/intelFPGA_lite/17.1/Lab2/lab2.v Line: 125
+Info (10041): Inferred latch for "display_counter_start" at lab2.v(125) File: C:/intelFPGA_lite/17.1/Lab2/lab2.v Line: 125
+Info (10018): Can't recognize finite state machine "state" because it has a complex reset state
+Info (12128): Elaborating entity "mux41" for hierarchy "mux41:comb_37" File: C:/intelFPGA_lite/17.1/Lab2/lab2.v Line: 50
+Warning (10270): Verilog HDL Case Statement warning at mux41.v(4): incomplete case statement has no default case item File: C:/intelFPGA_lite/17.1/Lab2/mux41.v Line: 4
+Warning (10240): Verilog HDL Always Construct warning at mux41.v(4): inferring latch(es) for variable "Out", which holds its previous value in one or more paths through the always construct File: C:/intelFPGA_lite/17.1/Lab2/mux41.v Line: 4
+Info (10041): Inferred latch for "Out[0]" at mux41.v(4) File: C:/intelFPGA_lite/17.1/Lab2/mux41.v Line: 4
+Info (10041): Inferred latch for "Out[1]" at mux41.v(4) File: C:/intelFPGA_lite/17.1/Lab2/mux41.v Line: 4
+Info (10041): Inferred latch for "Out[2]" at mux41.v(4) File: C:/intelFPGA_lite/17.1/Lab2/mux41.v Line: 4
+Info (10041): Inferred latch for "Out[3]" at mux41.v(4) File: C:/intelFPGA_lite/17.1/Lab2/mux41.v Line: 4
+Info (12128): Elaborating entity "clock_divider" for hierarchy "clock_divider:comb_43" File: C:/intelFPGA_lite/17.1/Lab2/lab2.v Line: 56
+Info (12128): Elaborating entity "counter" for hierarchy "counter:comb_44" File: C:/intelFPGA_lite/17.1/Lab2/lab2.v Line: 58
+Warning (10230): Verilog HDL assignment warning at counter.v(18): truncated value with size 32 to match size of target (20) File: C:/intelFPGA_lite/17.1/Lab2/counter.v Line: 18
+Info (12128): Elaborating entity "blinkLED" for hierarchy "blinkLED:comb_46" File: C:/intelFPGA_lite/17.1/Lab2/lab2.v Line: 62
+Warning (10230): Verilog HDL assignment warning at blinkLED.v(20): truncated value with size 32 to match size of target (12) File: C:/intelFPGA_lite/17.1/Lab2/blinkLED.v Line: 20
+Warning (10230): Verilog HDL assignment warning at blinkLED.v(29): truncated value with size 32 to match size of target (12) File: C:/intelFPGA_lite/17.1/Lab2/blinkLED.v Line: 29
+Warning (10034): Output port "d4" at blinkLED.v(1) has no driver File: C:/intelFPGA_lite/17.1/Lab2/blinkLED.v Line: 1
+Warning (10034): Output port "d5" at blinkLED.v(1) has no driver File: C:/intelFPGA_lite/17.1/Lab2/blinkLED.v Line: 1
+Info (12128): Elaborating entity "hex_to_bcd_converter" for hierarchy "hex_to_bcd_converter:winnerConvert" File: C:/intelFPGA_lite/17.1/Lab2/lab2.v Line: 66
+Warning (10230): Verilog HDL assignment warning at hex_to_bcd_converter.v(35): truncated value with size 32 to match size of target (4) File: C:/intelFPGA_lite/17.1/Lab2/hex_to_bcd_converter.v Line: 35
+Info (12128): Elaborating entity "random" for hierarchy "random:comb_47" File: C:/intelFPGA_lite/17.1/Lab2/lab2.v Line: 74
+Warning (10240): Verilog HDL Always Construct warning at random.v(7): inferring latch(es) for variable "enable", which holds its previous value in one or more paths through the always construct File: C:/intelFPGA_lite/17.1/Lab2/random.v Line: 7
+Info (10041): Inferred latch for "enable" at random.v(7) File: C:/intelFPGA_lite/17.1/Lab2/random.v Line: 7
+Info (12128): Elaborating entity "seven_seg_decoder" for hierarchy "seven_seg_decoder:decoder0" File: C:/intelFPGA_lite/17.1/Lab2/lab2.v Line: 76
+Warning (12241): 1 hierarchies have connectivity warnings - see the Connectivity Checks report folder
+Warning (13012): Latch mux41:comb_37|Out[0] has unsafe behavior File: C:/intelFPGA_lite/17.1/Lab2/mux41.v Line: 4
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal hex_sel[1] File: C:/intelFPGA_lite/17.1/Lab2/lab2.v Line: 125
+Warning (13012): Latch mux41:comb_37|Out[1] has unsafe behavior File: C:/intelFPGA_lite/17.1/Lab2/mux41.v Line: 4
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal hex_sel[1] File: C:/intelFPGA_lite/17.1/Lab2/lab2.v Line: 125
+Warning (13012): Latch mux41:comb_37|Out[2] has unsafe behavior File: C:/intelFPGA_lite/17.1/Lab2/mux41.v Line: 4
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal hex_sel[2] File: C:/intelFPGA_lite/17.1/Lab2/lab2.v Line: 125
+Warning (13012): Latch mux41:comb_37|Out[3] has unsafe behavior File: C:/intelFPGA_lite/17.1/Lab2/mux41.v Line: 4
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal hex_sel[2] File: C:/intelFPGA_lite/17.1/Lab2/lab2.v Line: 125
+Warning (13012): Latch mux41:comb_38|Out[0] has unsafe behavior File: C:/intelFPGA_lite/17.1/Lab2/mux41.v Line: 4
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal hex_sel[1] File: C:/intelFPGA_lite/17.1/Lab2/lab2.v Line: 125
+Warning (13012): Latch mux41:comb_38|Out[1] has unsafe behavior File: C:/intelFPGA_lite/17.1/Lab2/mux41.v Line: 4
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal hex_sel[1] File: C:/intelFPGA_lite/17.1/Lab2/lab2.v Line: 125
+Warning (13012): Latch mux41:comb_38|Out[2] has unsafe behavior File: C:/intelFPGA_lite/17.1/Lab2/mux41.v Line: 4
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal hex_sel[2] File: C:/intelFPGA_lite/17.1/Lab2/lab2.v Line: 125
+Warning (13012): Latch mux41:comb_38|Out[3] has unsafe behavior File: C:/intelFPGA_lite/17.1/Lab2/mux41.v Line: 4
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal hex_sel[2] File: C:/intelFPGA_lite/17.1/Lab2/lab2.v Line: 125
+Warning (13012): Latch mux41:comb_39|Out[0] has unsafe behavior File: C:/intelFPGA_lite/17.1/Lab2/mux41.v Line: 4
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal hex_sel[1] File: C:/intelFPGA_lite/17.1/Lab2/lab2.v Line: 125
+Warning (13012): Latch mux41:comb_39|Out[1] has unsafe behavior File: C:/intelFPGA_lite/17.1/Lab2/mux41.v Line: 4
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal hex_sel[1] File: C:/intelFPGA_lite/17.1/Lab2/lab2.v Line: 125
+Warning (13012): Latch mux41:comb_39|Out[2] has unsafe behavior File: C:/intelFPGA_lite/17.1/Lab2/mux41.v Line: 4
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal hex_sel[2] File: C:/intelFPGA_lite/17.1/Lab2/lab2.v Line: 125
+Warning (13012): Latch mux41:comb_39|Out[3] has unsafe behavior File: C:/intelFPGA_lite/17.1/Lab2/mux41.v Line: 4
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal hex_sel[2] File: C:/intelFPGA_lite/17.1/Lab2/lab2.v Line: 125
+Warning (13012): Latch mux41:comb_40|Out[0] has unsafe behavior File: C:/intelFPGA_lite/17.1/Lab2/mux41.v Line: 4
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal hex_sel[1] File: C:/intelFPGA_lite/17.1/Lab2/lab2.v Line: 125
+Warning (13012): Latch mux41:comb_40|Out[1] has unsafe behavior File: C:/intelFPGA_lite/17.1/Lab2/mux41.v Line: 4
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal hex_sel[1] File: C:/intelFPGA_lite/17.1/Lab2/lab2.v Line: 125
+Warning (13012): Latch mux41:comb_40|Out[2] has unsafe behavior File: C:/intelFPGA_lite/17.1/Lab2/mux41.v Line: 4
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal hex_sel[2] File: C:/intelFPGA_lite/17.1/Lab2/lab2.v Line: 125
+Warning (13012): Latch mux41:comb_40|Out[3] has unsafe behavior File: C:/intelFPGA_lite/17.1/Lab2/mux41.v Line: 4
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal hex_sel[2] File: C:/intelFPGA_lite/17.1/Lab2/lab2.v Line: 125
+Warning (13012): Latch mux41:comb_41|Out[0] has unsafe behavior File: C:/intelFPGA_lite/17.1/Lab2/mux41.v Line: 4
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal hex_sel[1] File: C:/intelFPGA_lite/17.1/Lab2/lab2.v Line: 125
+Warning (13012): Latch mux41:comb_41|Out[1] has unsafe behavior File: C:/intelFPGA_lite/17.1/Lab2/mux41.v Line: 4
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal hex_sel[1] File: C:/intelFPGA_lite/17.1/Lab2/lab2.v Line: 125
+Warning (13012): Latch mux41:comb_41|Out[2] has unsafe behavior File: C:/intelFPGA_lite/17.1/Lab2/mux41.v Line: 4
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal hex_sel[2] File: C:/intelFPGA_lite/17.1/Lab2/lab2.v Line: 125
+Warning (13012): Latch mux41:comb_41|Out[3] has unsafe behavior File: C:/intelFPGA_lite/17.1/Lab2/mux41.v Line: 4
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal hex_sel[2] File: C:/intelFPGA_lite/17.1/Lab2/lab2.v Line: 125
+Warning (13012): Latch mux41:comb_42|Out[0] has unsafe behavior File: C:/intelFPGA_lite/17.1/Lab2/mux41.v Line: 4
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal hex_sel[1] File: C:/intelFPGA_lite/17.1/Lab2/lab2.v Line: 125
+Warning (13012): Latch mux41:comb_42|Out[1] has unsafe behavior File: C:/intelFPGA_lite/17.1/Lab2/mux41.v Line: 4
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal hex_sel[1] File: C:/intelFPGA_lite/17.1/Lab2/lab2.v Line: 125
+Warning (13012): Latch mux41:comb_42|Out[2] has unsafe behavior File: C:/intelFPGA_lite/17.1/Lab2/mux41.v Line: 4
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal hex_sel[2] File: C:/intelFPGA_lite/17.1/Lab2/lab2.v Line: 125
+Warning (13012): Latch mux41:comb_42|Out[3] has unsafe behavior File: C:/intelFPGA_lite/17.1/Lab2/mux41.v Line: 4
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal hex_sel[2] File: C:/intelFPGA_lite/17.1/Lab2/lab2.v Line: 125
+Warning (13004): Presettable and clearable registers converted to equivalent circuits with latches. Registers power-up to an undefined state, and DEVCLRn places the registers in an undefined state.
+    Warning (13310): Register "state.RESET" is converted into an equivalent circuit using register "state.RESET~_emulated" and latch "state.RESET~1" File: C:/intelFPGA_lite/17.1/Lab2/lab2.v Line: 9
+    Warning (13310): Register "state.RESUME" is converted into an equivalent circuit using register "state.RESUME~_emulated" and latch "state.RESUME~1" File: C:/intelFPGA_lite/17.1/Lab2/lab2.v Line: 9
+Info (286030): Timing-Driven Synthesis is running
+Info (144001): Generated suppressed messages file C:/intelFPGA_lite/17.1/Lab2/output_files/lab2.map.smsg
+Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
+    Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
+Info (21057): Implemented 626 device resources after synthesis - the final resource count might be different
+    Info (21058): Implemented 5 input pins
+    Info (21059): Implemented 52 output pins
+    Info (21061): Implemented 569 logic cells
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 78 warnings
+    Info: Peak virtual memory: 4867 megabytes
+    Info: Processing ended: Mon Feb 24 14:48:30 2020
+    Info: Elapsed time: 00:00:17
+    Info: Total CPU time (on all processors): 00:00:28
+
+
++------------------------------------------+
+; Analysis & Synthesis Suppressed Messages ;
++------------------------------------------+
+The suppressed messages can be found in C:/intelFPGA_lite/17.1/Lab2/output_files/lab2.map.smsg.
+
+

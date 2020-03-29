@@ -1,0 +1,13 @@
+module binkLED(input ms_clk, Reset_n, output reg [3:0] d0, d1, d2, d3, d4, d5);
+parameter factor = 1000;
+reg [11:0] countQ;
+
+always@(posedge ms_clk, negedge Reset_n)
+begin	
+		if(!Reset_n)
+		begin
+		countQ<=0;
+		d0<=4'b0000;
+		d1<=4'b0000;
+		d2<=4'b0000;
+		d3<=4'b0000;
