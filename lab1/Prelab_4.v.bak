@@ -1,0 +1,77 @@
+//1. a d flip flop
+module dff(
+    data,
+    clk,
+    reset,
+    enable,
+    q
+);
+input data, clk, reset, enable;
+output q;
+reg q;
+always @(posedge clk)
+if (~reset) begin
+  q <= 1'b0;
+end else if(enable) begin
+  q <= data;
+end
+endmodule
+//2. a d latch
+module dlatch(
+    data,
+    enable,
+    reset,
+    q
+);
+input data, enable, reset;
+output q;
+reg q;
+
+always @ (enable or reset or data)
+if(~reset)begin
+  q <= 1'b0;
+end else if (enable) begin
+  q <= data;
+end
+endmodule
+//3. a 4 to 1 multiplexer
+module mux41 (
+    select,
+    d,
+    q
+);
+
+input[1:0] select;
+input[3:0] d;
+output q;
+
+wire q;
+wire[1:0] select;
+wire[3:0] d;
+
+assign q = d[select];
+
+endmodule
+
+//4. a 4 bit counter
+module counter(
+    reset,
+    enable,
+    clk,
+    out
+);
+
+input reset;
+input enable;
+input clk;
+output out;
+reg[3:0] out;
+
+always @ (posedge clk) begin
+  if(~reset) begin
+  out <= 0;
+  end else if (enable) begin
+  out <= out + 1;
+  end
+end
+endmodule
