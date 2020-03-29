@@ -1,0 +1,82 @@
+`timescale 1ns / 1ps
+module fir_filter(input sample_clock, input reset, input [15:0] input_sample, output [15:0] output_sample);
+
+parameter N = 17;
+
+reg [15:0] delayholder[N-1: 0];
+wire signed [31:0] summation [N-1:0];
+wire signed [31:0] finsummations [N-1:0];
+wire signed [31:0] finsummation;
+
+reg signed [15:0] coeffs[543:0];
+
+integer x;
+integer z;
+
+always @(*)
+begin
+
+	for(x = 0; x<N; x=x+31)
+	begin
+		coeff[x+0]  = -3778;
+		coeff[x+1]  = -2;
+		coeff[x+2]  = 2889;
+		coeff[x+3]  = -4;
+		coeff[x+4]  = -3571;
+		coeff[x+5]  = -4;
+		coeff[x+6]  = 4044;
+		coeff[x+7]  = -2;
+		coeff[x+8]  = 28564;
+		coeff[x+9]  = -2;
+		coeff[x+10] = 4044;
+		coeff[x+11] = -4;
+		coeff[x+12] = -3571;
+		coeff[x+13] = -4;
+		coeff[x+14] = 2889;
+		coeff[x+15] = -2;
+		coeff[x+16] = -3778;
+	end
+end
+
+generate 
+genvar i;
+
+for (i=0; i<N; i=i+1)
+begin: mult1
+	multiplier mult1(.dataa(coeffs[i]), .datab(delayholder[i]), .result(summation[i]));
+end
+
+always @(posedge sample_clock or posedge reset)
+begin
+	if(reset)
+	begin
+		output_sample = 0;
+		for (z=0; z<N; z=z+1)
+		begin
+			delayholder[z] = 0;
+		end
+	end
+	
+	else
+	begin
+		for (z=N-1; z>0; z=z-1)
+		begin
+			delayholder[z] = delayholder[z-1];
+		end
+		delayholder[0] = input_sample;
+	end
+	
+	for (z=0; z<N; z=z+1)
+	begin
+		finsummations[z] = {16{summation[z][31]}, summation[z][31:16]}
+	end
+	
+	finsummation = 0;
+	for (z=0; z<N; z=z+1)
+	begin
+		finsummation = finsummation + finsummations[z];
+	end
+	
+	output_sample = finsummation;
+end
+endmodule
